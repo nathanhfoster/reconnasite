@@ -1,0 +1,54 @@
+.TileContent {
+    z-index: 102;
+    /* overflow-y: auto; */
+    /* position: relative; */
+    /* line-height: 76px; */
+    /* max-height: 24px; */
+    font-size: 13px;
+    min-width: 0;
+    align-items: center;
+    text-align: left;
+}
+
+.hasEventsContainer {
+    cursor: pointer;
+    line-height: 24px;
+    height: 24px;
+    font-size: 13px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.hasEventsContainer:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.ListItemContainer {
+    display: inline-block;
+}
+
+.eventDate {
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 24px;
+    height: 24px;
+    min-width: 0;
+    text-align: right;
+}
+
+.eventTitle {
+    flex: 1 0 0;
+    margin-left: 0.25rem;
+    user-select: none;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: inherit;
+    line-height: inherit;
+    overflow: hidden;
+    white-space: nowrap;
+    /* -webkit-mask-image: linear-gradient( to right, #000, #000 calc(100% - 2px), transparent calc(100% - 2px), transparent); */
+}

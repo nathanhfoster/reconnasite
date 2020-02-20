@@ -1,0 +1,36 @@
+.DatePicker {
+  /* background-color: red; */
+
+}
+
+.react-datepicker-wrapper {}
+
+.react-datepicker__input-container {
+
+}
+
+.react-datepicker__input-container input {
+  min-width: 90px;
+  outline: 0;
+  padding-left: 8px;
+}
+
+.DatePickerPopper {
+  z-index: 9999 !important;
+}
+
+.NavBaDatePickerTodayButton {
+  color: var(--primaryColor);
+  font-size: 16px;
+}
+
+.NavBaDatePickerTodayButton:hover {
+  color: var(--tertiaryColor);
+  cursor: pointer;
+}
+
+
+.react-datepicker__time-container--with-today-button {
+  right: 0;
+  left: -72px;
+}

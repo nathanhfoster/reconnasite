@@ -1,0 +1,10 @@
+.input-group-text {
+    color: inherit;
+    background-color: inherit;
+    background: inherit;
+}
+
+.input-group-text:hover {
+    color: var(--primaryColor);
+    cursor: pointer;
+}

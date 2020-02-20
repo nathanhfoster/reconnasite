@@ -1,0 +1,17 @@
+.form-control {
+  min-height: var(--inputHeight);
+  background: var(--quinaryColor);
+  color: var(--secondaryColor) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.form-control::placeholder {
+  color: var(--light_grey);
+}
+
+.form-control:focus {
+  transition: box-shadow 0.3s ease-in-out;
+  border-color: inherit !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.175rem var(--accentColor);
+}

@@ -1,0 +1,16 @@
+:root {
+  --navBarImageHeight: 36px;
+  --inputHeight: 48px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --navBarHeight: 68px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --navBarHeight: 64px;
+  }
+}

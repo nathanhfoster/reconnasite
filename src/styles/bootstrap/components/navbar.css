@@ -1,0 +1,37 @@
+.navbar {
+
+}
+
+.navbar-collapse {
+   
+}
+
+.navbar-brand {
+  color: var(--secondaryColor) !important;
+  font-weight: bold;
+  font-family: "Varela Round", sans-serif;
+}
+
+.navbar-brand, .navbar-brand * {
+  padding: 0;
+  font-size: 24px;
+}
+
+.navbar-toggler:focus, .navbar-toggler:hover {
+  outline: 0;
+}
+
+.nav-item {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: var(--navBarImageHeight);
+}
+
+.navbar-nav .dropdown-menu {
+  background: var(--slate_grey);
+  border: 0;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background: inherit;
+}

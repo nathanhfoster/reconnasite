@@ -1,0 +1,27 @@
+.Home {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.AboutFeatureIcon {
+  font-size: 8em;
+}
+
+.AboutFeatureImage {
+  width: auto;
+  height: 128px;
+}
+
+.AboutFeatureText {
+  height: 64px;
+}
+
+.HeaderTitle {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: var(--accentColor);
+}
+
+.SubHeaderTitle {
+  font-weight: 300;
+}

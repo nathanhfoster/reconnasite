@@ -1,0 +1,33 @@
+@import "./stylesM.css";
+.List {
+    overflow-y: auto;
+    white-space: nowrap;
+    padding: 2px;
+}
+
+.listItem {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px;
+    height: 68px;
+    width: calc(100% + 10px);
+    display: flex;
+}
+
+.listItem:hover {
+    /* border-color: var(--accentColor); */
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+a.list-group-item .list-group-item-heading, button.list-group-item .list-group-item-heading, .list-group-item-text {
+    color: var(--tertiarycolor);
+}
+
+.EventColorLabelContainer {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    display: inline-block;
+    margin-right: 6px;
+    border-radius: 100%;
+}

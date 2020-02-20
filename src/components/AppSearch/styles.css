@@ -1,0 +1,31 @@
+.AppSearch input, .AppSearch .input-group-text {
+    border: 0;
+}
+
+.AppSearch input::placeholder {
+    /* padding-left: 24px; */
+    color: var(--secondaryColor);
+}
+
+.AppSearch input:-ms-input-placeholder {
+    color: var(--secondaryColor);
+}
+
+.AppSearch input::-ms-input-placeholder {
+    color: var(--secondaryColor);
+}
+
+.LogoIconContainer {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background: var(--quinaryColor);
+}
+
+.TelescopeIcon {
+    color: var(--secondaryColor);
+    font-size: 32px;
+}
+
+.TelescopeIcon:hover {
+    color: var(--accentColor);
+}

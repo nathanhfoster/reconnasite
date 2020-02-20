@@ -1,0 +1,86 @@
+.listSearchContainer {
+    font-size: 1rem;
+    position: relative;
+    height: 55px;
+}
+
+.listSearchItemsContainer {
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 2px;
+    z-index: 9999;
+    background-color: white;
+    /* position: fixed !important; */
+    /* will-change: transform; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+}
+
+.listSearchInputDropDown {
+    position: relative;
+    display: block;
+    height: 36px;
+    width: 100%;
+}
+
+.listSearchInput {
+    width: 100%;
+    padding: 6px 0;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: rgba(0, 0, 0, 0.54);
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    background: inherit;
+}
+
+.listSearchInput:hover, .listSearchInput:focus {
+    border-color: rgba(0, 0, 0, 1);
+    transition: border-width 0.2s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    white-space: nowrap;
+}
+
+.listSearchDropDownIcon {
+    border: solid rgba(0, 0, 0, 0.4);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    top: 8px;
+    right: 4px;
+    outline: 0;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    -ms-transition: -ms-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+}
+
+.listSearchDropDownIcon:hover {
+    cursor: pointer;
+    border-color: rgba(0, 0, 0, 1);
+}
+
+.Up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.Down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.listSearchHelper {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 0.75rem;
+    min-height: 1em;
+    text-align: left;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1em;
+    letter-spacing: 0.03333em;
+}

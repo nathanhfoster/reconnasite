@@ -1,0 +1,12 @@
+.Login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    opacity: var(--mainOpacity);
+}
+
+.LoginFormContainer {
+    /* background: rgba(0, 0, 0, 0.1); */
+}

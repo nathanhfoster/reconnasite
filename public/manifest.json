@@ -1,0 +1,37 @@
+{
+  "name": "Reconnasite",
+  "short_name": "Reconnasite",
+  "description": "Get paid to survey properties.",
+  "author": "Nathan Foster",
+  "keywords": [
+    "react",
+    "redux",
+    "journal",
+    "diary", 
+    "astral", 
+    "tree" 
+  ],
+  "icons": [
+    {
+      "src": "/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#29303b",
+  "theme_color": "#29303b",
+  "start_url": "/new-entry",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any"
+}

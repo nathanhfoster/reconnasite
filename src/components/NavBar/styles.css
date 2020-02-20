@@ -1,0 +1,36 @@
+.NavBar {
+  font-weight: bold;
+  width: 100%;
+  z-index: 103;
+  box-shadow: var(--primaryBoxShadow);
+  text-align: center !important;
+  background: var(--slate_grey);
+}
+
+
+
+.NavBar button.dropdown-item {
+  color: var(--primaryColor) !important;
+}
+
+@media (min-width: 768px) {
+  .NavBar li {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 16px;
+  }
+}
+
+.NavBar .NavBarImage {
+  max-height: var(--navBarImageHeight);
+  margin-right: 4px;
+  padding: 0;
+  top: 0;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.NavBar .NavBarLink:hover {
+  color: var(--accentColor);
+  cursor: pointer;
+}
