@@ -4,11 +4,11 @@ import { connect as reduxConnect } from "react-redux"
 import { useHistory, Route, Switch, Redirect } from "react-router-dom"
 import { RouteMap } from "./Routes"
 import {
+  Account,
   Entries,
   Home,
   Settings,
   Support,
-  Login,
   PageNotFound
 } from "../../views"
 import { PrivacyPolicy } from "../"
@@ -24,6 +24,10 @@ const {
   SIGNUP,
   PASSWORD_RESET,
   SETTINGS,
+  SETTINGS_ENTRIES,
+  SETTINGS_PREFERENCES,
+  SETTINGS_PROFILE,
+  SETTINGS_AVAILABILITY,
   SUPPORT,
   CALENDAR,
   ENTRIES,
@@ -55,10 +59,16 @@ const ReactRouter = props => {
     { path: [ROOT, HOME], component: Home },
     {
       path: [LOGIN, SIGNUP, PASSWORD_RESET],
-      component: renderRedirectOrComponent(User.token, NEW_ENTRY, Login)
+      component: renderRedirectOrComponent(User.token, NEW_ENTRY, Account)
     },
     {
-      path: [SETTINGS],
+      path: [
+        SETTINGS,
+        SETTINGS_ENTRIES,
+        SETTINGS_PREFERENCES,
+        SETTINGS_PROFILE,
+        SETTINGS_AVAILABILITY
+      ],
       component: Settings
     },
     {

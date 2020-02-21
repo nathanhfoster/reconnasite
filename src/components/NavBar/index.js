@@ -30,6 +30,9 @@ const {
   ENTRIES_CARDS,
   LOGIN,
   SETTINGS,
+  SETTINGS_PROFILE,
+  SETTINGS_PREFERENCES,
+  SETTINGS_AVAILABILITY,
   SUPPORT,
   PRIVACY_POLICY
 } = RouteMap
@@ -103,10 +106,32 @@ const NavBar = ({ UserId, isInStandalone, isMobile, UserLogout }) => {
       ),
       links: [
         {
-          dropdownItem: true,
-          route: SETTINGS,
-          title: "SETTINGS",
-          icon: <i className="fas fa-cog NavBarImage" />
+          icon: (
+            <span className="NavBarLink">
+              <i className="fas fa-cog NavBarImage" />
+              SETTINGS
+            </span>
+          ),
+          links: [
+            {
+              dropdownItem: true,
+              route: SETTINGS_PROFILE,
+              title: "PROFILE",
+              icon: <i className="fas fa-user-circle NavBarImage" />
+            },
+            {
+              dropdownItem: true,
+              route: SETTINGS_PREFERENCES,
+              title: "PREFERENCES",
+              icon: <i className="fas fa-sliders-h NavBarImage" />
+            },
+            {
+              dropdownItem: true,
+              route: SETTINGS_AVAILABILITY,
+              title: "AVAILABILITY",
+              icon: <i className="fas fa-calendar-alt NavBarImage" />
+            }
+          ]
         },
         {
           dropdownItem: true,

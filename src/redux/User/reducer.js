@@ -32,6 +32,15 @@ const DEFAULT_STATE_USER = {
     longitude: null,
     speed: null,
     timestamp: null
+  },
+  Availability: {
+    general: {
+      week_days: [1, 2, 3, 4, 5],
+      start_hour: 9,
+      start_minute: 0,
+      end_hour: 17,
+      end_minute: 0
+    }
   }
 }
 
@@ -54,6 +63,14 @@ const User = (state = DEFAULT_STATE_USER, action) => {
       return {
         ...state,
         Settings: { ...state.Settings, ...payload }
+      }
+    case UserActionTypes.USER_SET_AVAILABILITY_GENERAL:
+      return {
+        ...state,
+        Availability: {
+          ...state.Availability,
+          general: { ...state.Availability.general, ...payload }
+        }
       }
     case AppActionTypes.REDUX_RESET:
       return DEFAULT_STATE_USER

@@ -166,7 +166,7 @@ ReactDatePicker.defaultProps = {
     <i className="fas fa-calendar-day NavBaDatePickerTodayButton"> Today</i>
   ),
   popperClassName: "DatePickerPopper",
-  popperPlacement: popperPlacementPositions.AUTO_LEFT,
+  popperPlacement: popperPlacementPositions.BOTTOM,
   // popperModifiers:{{
   //   offset: {
   //     enabled: true,
@@ -183,7 +183,7 @@ ReactDatePicker.defaultProps = {
   onChange: date => console.log(date),
   showTimeSelect: true,
   timeFormat: "hh:mm a",
-  timeIntervals: 1,
+  timeIntervals: 15,
   timeCaption: "time"
 }
 

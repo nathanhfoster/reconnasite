@@ -34,3 +34,7 @@
   right: 0;
   left: -72px;
 }
+
+.react-datepicker__time-list-item--disabled {
+  display: none;
+}

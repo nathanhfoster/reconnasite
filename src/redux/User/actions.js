@@ -6,6 +6,16 @@ import { saveReduxState } from "../Persister/actions"
 import { GetUserEntries } from "../Entries/actions"
 import qs from "qs"
 
+const SetUser = payload => ({
+  type: UserActionTypes.USER_SET,
+  payload
+})
+
+const SetUserAvailabilityGeneral = payload => ({
+  type: UserActionTypes.USER_SET_AVAILABILITY_GENERAL,
+  payload
+})
+
 const ChangeUser = payload => ({ type: UserActionTypes.USER_SET, payload })
 
 const UserLogin = (payload, rememberMe) => async dispatch =>
@@ -28,10 +38,7 @@ const RefreshPatchUser = (token, id) => (dispatch, getState) =>
   Axios()
     .get(`users/${id}/refresh/`)
     .then(res => {
-      dispatch({
-        type: UserActionTypes.USER_SET,
-        payload: res.data
-      })
+      dispatch(SetUser(res.data))
     })
     .catch(e =>
       e.response && e.response.status == 401
@@ -197,6 +204,8 @@ const SetSettings = payload => (dispatch, getState) => {
 }
 
 export {
+  SetUser,
+  SetUserAvailabilityGeneral,
   ChangeUser,
   UserLogin,
   RefreshPatchUser,

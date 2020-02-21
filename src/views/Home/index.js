@@ -78,19 +78,6 @@ const Home = ({ userId }) => {
       )
     },
     {
-      title: "Easy",
-      text: "You will be guided through your site reconnaissance step by step ",
-      header: <ListOl className="AboutFeatureImage" />,
-      button: (
-        <Button
-          color="accent"
-          onClick={() => RouterPush(history, RouteMap.SUPPORT)}
-        >
-          Support Page
-        </Button>
-      )
-    },
-    {
       title: "Support",
       text: "World class support",
       header: <UserHeadset className="AboutFeatureImage" />,
@@ -104,16 +91,19 @@ const Home = ({ userId }) => {
       )
     },
     {
+      title: "Easy",
+      text: "You will be guided through your site reconnaissance step by step ",
+      header: <ListOl className="AboutFeatureImage" />
+    },
+    {
       title: "Get Paid",
       text: "Get paid after sucessfully completing a recon",
       header: <MoneyBill className="AboutFeatureImage" />
-      // button: <Button color="accent">Learn More</Button>
     },
     {
       title: "Linkable",
       text: "Share any public view you want with your friends and family",
       faIcon: "fas fa-link"
-      // button: <Button color="accent">Learn More</Button>
     },
     {
       title: "Responsive",
@@ -144,7 +134,9 @@ const Home = ({ userId }) => {
           <h1 className="HeaderTitle">Reconnasite</h1>
         </Col>
         <Col xs={12}>
-          <h4 className="SubHeaderTitle">Get paid to survey properties</h4>
+          <h4 className="SubHeaderTitle">
+            Get paid to survey commercial properties
+          </h4>
         </Col>
       </Row>
       <Row>{renderFeatures(features)}</Row>
