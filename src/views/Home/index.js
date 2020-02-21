@@ -52,19 +52,6 @@ const Home = ({ userId }) => {
       )
     },
     {
-      title: "Notifications",
-      text: "Get personalized notifications when a recon becomes available",
-      header: <Bell className="AboutFeatureImage" />,
-      button: (
-        <Button
-          color="accent"
-          onClick={() => RouterPush(history, RouteMap.SETTINGS)}
-        >
-          Comming Soon
-        </Button>
-      )
-    },
-    {
       title: "Offline",
       text: "Doesn't require an internet connection",
       header: <WifiSlash className="AboutFeatureImage" />,
@@ -89,6 +76,11 @@ const Home = ({ userId }) => {
           Support Page
         </Button>
       )
+    },
+    {
+      title: "Notifications",
+      text: "Get personalized notifications when a recon becomes available",
+      header: <Bell className="AboutFeatureImage" />
     },
     {
       title: "Easy",
