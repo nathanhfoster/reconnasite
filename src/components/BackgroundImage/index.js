@@ -2,7 +2,7 @@ import React, { Fragment, useMemo, memo } from "react"
 import PropTypes from "prop-types"
 import { Media } from "reactstrap"
 import { useLocation } from "react-router-dom"
-import { RouteMap } from "../ReactRouter/Routes"
+import { RouteMap } from "../../routes"
 import "./styles.css"
 
 const backgroundImageRouteMap = route => {

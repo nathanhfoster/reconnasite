@@ -1,7 +1,7 @@
 import React, { Fragment, memo } from "react"
 import PropTypes from "prop-types"
 import { useHistory } from "react-router-dom"
-import { RouterPush, RouteMap } from "../../ReactRouter/Routes"
+import { RouterPush, RouteMap } from "../../../routes"
 import { GetAddress } from "../../../redux/Actions/Google"
 import {
   K_CIRCLE_SIZE,
@@ -71,7 +71,7 @@ const Zoom = props => {
   const { $dimensionKey, renderUserLocation } = props
   const className =
     $dimensionKey === "NewEntry"
-      ? "fas fa-feather-alt"
+      ? "fas fa-plus"
       : renderUserLocation
       ? "fas fa-user-circle fa-2x"
       : "fas fa-circle"

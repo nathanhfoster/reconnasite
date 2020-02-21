@@ -1,6 +1,6 @@
 import React, { memo } from "react"
 import PropTypes from "prop-types"
-import { RouteMap, RouterLinkPush } from "../../components/ReactRouter/Routes"
+import { RouteMap, RouterLinkPush } from "../../routes"
 import { withRouter, Link } from "react-router-dom"
 import "./styles.css"
 

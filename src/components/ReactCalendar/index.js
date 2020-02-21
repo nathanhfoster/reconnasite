@@ -1,4 +1,4 @@
-import React, { lazy, useEffect, useMemo } from "react"
+import React, { useEffect, useMemo } from "react"
 import PropTypes from "prop-types"
 import { Container, Row, Col, Button } from "reactstrap"
 import { connect as reduxConnect } from "react-redux"
@@ -6,7 +6,7 @@ import Calendar from "react-calendar/dist/entry.nostyle"
 import Moment from "react-moment"
 import MomentJS from "moment"
 import { withRouter } from "react-router-dom"
-import { RouterPush, RouteMap } from "../ReactRouter/Routes"
+import { RouterPush, RouteMap } from "../../routes"
 import { SetCalendar } from "../../redux/Calendar/Calendar"
 import { GetUserEntriesByDate } from "../../redux/Entries/actions"
 import TileContent from "./TileContent"
@@ -107,7 +107,7 @@ const ReactCalendar = ({
               className="TodayButton ml-1"
               onClick={handleNewEntryClick}
             >
-              <i className="fas fa-feather-alt NavBarImage NavBarLink" />
+              <i className="fas fa-plus NavBarImage NavBarLink" />
             </Button>
           </div>
           <EntryList

@@ -45,29 +45,25 @@ const Sections = ({ User, GetUserSettings, PostSettings, SetSettings }) => {
   }
 
   const sections = [
+    // {
+    //   title: (
+    //     <span>
+    //       Appearance
+    //     </span>
+    //   ),
+    //   inputs: [
+    //     {
+    //       settingKey: "show_footer",
+    //       disabled: !User.id,
+    //       checked: show_footer,
+    //       onClickCallback: handleOnClick,
+    //       title: "Show footer",
+    //       tooltipTitle: "Toggles the view of the footer"
+    //     }
+    //   ]
+    // },
     {
-      title: (
-        <span>
-          Appearance <i className="fas fa-user-astronaut" />
-        </span>
-      ),
-      inputs: [
-        {
-          settingKey: "show_footer",
-          disabled: !User.id,
-          checked: show_footer,
-          onClickCallback: handleOnClick,
-          title: "Show footer",
-          tooltipTitle: "Toggles the view of the footer"
-        }
-      ]
-    },
-    {
-      title: (
-        <span>
-          Features <i className="fas fa-space-shuttle" />
-        </span>
-      ),
+      title: <span>Features</span>,
       inputs: [
         {
           settingKey: "offline_mode",

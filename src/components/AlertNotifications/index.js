@@ -50,9 +50,7 @@ const AlertNotifications = ({
         value={shouldShow}
         delay={1600}
       />
-      <ToastHeader icon={<i className="fas fa-feather-alt" />}>
-        {title}
-      </ToastHeader>
+      <ToastHeader icon={<i className="fas fa-plus" />}>{title}</ToastHeader>
       <ToastBody>
         <h6>{message}</h6>
 

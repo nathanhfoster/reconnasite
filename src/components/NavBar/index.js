@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { connect as reduxConnect } from "react-redux"
-import { RouteMap } from "../ReactRouter/Routes"
+import { RouteMap } from "../../routes"
 import PropTypes from "prop-types"
 import "./styles.css"
 import {
@@ -115,9 +115,9 @@ const NavBar = ({ UserId, isInStandalone, isMobile, UserLogout }) => {
           links: [
             {
               dropdownItem: true,
-              route: SETTINGS_PROFILE,
-              title: "PROFILE",
-              icon: <i className="fas fa-user-circle NavBarImage" />
+              route: SETTINGS_AVAILABILITY,
+              title: "AVAILABILITY",
+              icon: <i className="fas fa-calendar-alt NavBarImage" />
             },
             {
               dropdownItem: true,
@@ -127,9 +127,9 @@ const NavBar = ({ UserId, isInStandalone, isMobile, UserLogout }) => {
             },
             {
               dropdownItem: true,
-              route: SETTINGS_AVAILABILITY,
-              title: "AVAILABILITY",
-              icon: <i className="fas fa-calendar-alt NavBarImage" />
+              route: SETTINGS_PROFILE,
+              title: "PROFILE",
+              icon: <i className="fas fa-user-circle NavBarImage" />
             }
           ]
         },

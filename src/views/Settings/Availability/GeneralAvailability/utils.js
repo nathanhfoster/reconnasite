@@ -10,6 +10,8 @@ const AVAILABLE_DAYS = [
   "Saturdays"
 ]
 
+const AVAILABLE_DAYS_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
 const getAvailableHours = (
   starthour = 9,
   startMinute = 0,
@@ -36,4 +38,4 @@ const AVAILABLE_HOURS = getAvailableHours().map((e, i) => ({
   value: e.format("hh:mma")
 }))
 
-export { AVAILABLE_DAYS, AVAILABLE_HOURS }
+export { AVAILABLE_DAYS, AVAILABLE_DAYS_SHORT, AVAILABLE_HOURS }

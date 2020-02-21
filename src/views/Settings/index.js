@@ -2,7 +2,7 @@ import React, { Fragment, memo } from "react"
 import PropTypes from "prop-types"
 import { withRouter } from "react-router-dom"
 import { BasicTabs } from "../../components"
-import { RouterPush, RouteMap } from "../../components/ReactRouter/Routes"
+import { RouterPush, RouteMap } from "../../routes"
 import { Container, Row, Col } from "reactstrap"
 import AccountDetails from "./AccountDetails"
 import UpdateProfile from "./UpdateProfile"
@@ -26,15 +26,10 @@ const Settings = ({ history, location: { pathname } }) => {
 
   const tabs = [
     {
-      tabId: SETTINGS_PROFILE,
-      title: "Profile",
+      tabId: SETTINGS_AVAILABILITY,
+      title: "Availability",
       className: "mt-2",
-      render: (
-        <Fragment>
-          <AccountDetails />
-          <UpdateProfile />
-        </Fragment>
-      ),
+      render: <Availability />,
       onClickCallback: handleTabChange
     },
     {
@@ -45,10 +40,15 @@ const Settings = ({ history, location: { pathname } }) => {
       onClickCallback: handleTabChange
     },
     {
-      tabId: SETTINGS_AVAILABILITY,
-      title: "Availability",
+      tabId: SETTINGS_PROFILE,
+      title: "Profile",
       className: "mt-2",
-      render: <Availability />,
+      render: (
+        <Fragment>
+          <AccountDetails />
+          <UpdateProfile />
+        </Fragment>
+      ),
       onClickCallback: handleTabChange
     }
   ]
