@@ -73,7 +73,6 @@ const GeneralAvailability = ({
         SetUserAvailabilityGeneral(payload)
       } else {
         const uniqueDays = week_days.filter(day => day != id)
-        console.log(uniqueDays)
         const payload = { week_days: uniqueDays }
         SetUserAvailabilityGeneral(payload)
       }
