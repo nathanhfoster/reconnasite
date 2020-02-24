@@ -15,18 +15,18 @@ const renderSupportCards = supportCards =>
 const Support = () => {
   const supportCards = [
     {
-      title: "Contact Dev",
+      title: "Contact Us",
       text: "Open to feature suggestions, bug reports, or conversation!",
       faIcon: "fas fa-envelope",
       button: (
         <Button
           color="accent"
           tag="a"
-          href="mailto:nateinthegame@gmail.com?subject=Astral%20Tree%20Support"
+          href="mailto:support@escreenlogic.com?subject=Reconnasite%20Support"
           target="_blank"
           rel="noopener noreferrer"
         >
-          nateinthegame@gmail.com
+          support@escreenlogic.com
         </Button>
       )
     }

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useMemo } from "react"
 import PropTypes from "prop-types"
 import { Container, Row, Col, ButtonGroup, Button } from "reactstrap"
 import { AddToHomeScreen, BasicCard, Footer } from "../../components"
@@ -18,14 +18,9 @@ import {
 } from "../../images/SVG"
 import "./styles.css"
 
-const mapStateToProps = ({ User: { id } }) => ({ userId: id })
-
-const renderFeatures = features =>
-  features.map((feature, i) => (
-    <Col key={i} md={4} sm={6} xs={12}>
-      <BasicCard cardHeaderClassName="Center" {...feature} />
-    </Col>
-  ))
+const mapStateToProps = ({ User: { id } }) => ({
+  userId: id
+})
 
 const Home = ({ userId }) => {
   const history = useHistory()
@@ -119,6 +114,16 @@ const Home = ({ userId }) => {
     }
   ]
 
+  const renderFeatures = useMemo(
+    () =>
+      features.map((feature, i) => (
+        <Col key={i} md={4} sm={6} xs={12} className="p-0 p-sm-1 p-md-2 p-lg-3">
+          <BasicCard cardHeaderClassName="Center" {...feature} />
+        </Col>
+      )),
+    [features]
+  )
+
   return (
     <Container tag="article" className="Home Container">
       <Row className="Center">
@@ -131,7 +136,7 @@ const Home = ({ userId }) => {
           </h4>
         </Col>
       </Row>
-      <Row>{renderFeatures(features)}</Row>
+      <Row>{renderFeatures}</Row>
       <hr style={{ height: 40 }} />
       <Footer />
     </Container>
