@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import "./styles.css"
 
-const popperPlacementPositions = {
+export const popperPlacementPositions = {
   AUTO: "auto",
   AUTO_LEFT: "auto-left",
   AUTO_RIGHT: "auto-right",

@@ -34,7 +34,7 @@ const getAvailableHours = (
 }
 
 const AVAILABLE_HOURS = getAvailableHours().map((e, i) => ({
-  id: `${e.hour()}:${e.minute()}`,
+  id: e,
   value: e.format("hh:mma")
 }))
 

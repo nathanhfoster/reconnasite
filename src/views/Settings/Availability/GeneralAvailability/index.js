@@ -10,12 +10,14 @@ import {
   FormGroup,
   Input,
   ButtonGroup,
-  Button
+  Button,
+  Jumbotron
 } from "reactstrap"
-import { ReactDatePicker } from "../../../../components"
+import { BasicDropDown } from "../../../../components"
+import MomentJs from "moment"
 import { SetUserAvailabilityGeneral } from "../../../../redux/User/actions"
 import { removeArrayDuplicates } from "../../../../helpers"
-import { AVAILABLE_DAYS, AVAILABLE_DAYS_SHORT } from "./utils"
+import { AVAILABLE_DAYS, AVAILABLE_DAYS_SHORT, AVAILABLE_HOURS } from "./utils"
 import "./styles.css"
 
 const mapStateToProps = ({
@@ -38,29 +40,34 @@ const GeneralAvailability = ({
   isMobile,
   SetUserAvailabilityGeneral
 }) => {
-  const startHour = new Date().setHours(start_hour, start_minute)
+  const startHour = MomentJs()
+    .hour(start_hour)
+    .minute(start_minute)
 
-  const endHour = new Date().setHours(end_hour, end_minute)
+  const startHourText = startHour.format("hh:mma")
 
-  const startMinTime = new Date().setHours(8, 59)
-  const startMaxTime = new Date().setHours(17, 0)
-  const endMinTime = startHour
-  const endMaxTime = new Date().setHours(17, 0)
+  const endHour = MomentJs()
+    .hour(end_hour)
+    .minute(end_minute)
+
+  const endHourText = endHour.format("hh:mma")
+
+  const availableEndHours = AVAILABLE_HOURS.filter(e => e.id.isAfter(startHour))
 
   const handleStartTimeChange = date => {
-    const start_hour = date.getHours()
-    const start_minute = date.getMinutes()
+    const start_hour = date.hour()
+    const start_minute = date.minute()
     const payload = { start_hour, start_minute }
     SetUserAvailabilityGeneral(payload)
 
-    if (date > endHour) {
+    if (date.isAfter(endHour)) {
       handleEndTimeChange(date)
     }
   }
 
   const handleEndTimeChange = date => {
-    const end_hour = date.getHours()
-    const end_minute = date.getMinutes()
+    const end_hour = date.hour()
+    const end_minute = date.minute()
     const payload = { end_hour, end_minute }
     SetUserAvailabilityGeneral(payload)
   }
@@ -108,36 +115,28 @@ const GeneralAvailability = ({
   )
 
   return (
-    <Container className="GeneralAvailability Container p-0">
+    <Container className="GeneralAvailability Container" tag={Jumbotron}>
       <Row>
         <Col tag="h5" xs={12} className="p-0">
           Available Hours
         </Col>
       </Row>
-      <Row>
-        <Col xs={12} className="p-0 form-inline">
-          <ReactDatePicker
-            selectsStart
-            selected={startHour}
-            onChange={handleStartTimeChange}
-            showTimeSelect
-            showTimeSelectOnly
-            timeCaption="Time"
-            dateFormat="h:mm aa"
-            minTime={startMinTime}
-            maxTime={startMaxTime}
+      <Row className="pb-2">
+        <Col xs={12} className="form-inline Center">
+          <BasicDropDown
+            value={startHourText}
+            containerClassName="GeneralAvailabilityDropDown"
+            list={AVAILABLE_HOURS}
+            onClickCallback={handleStartTimeChange}
           />
 
-          <ReactDatePicker
-            selectsEnd
-            selected={endHour}
-            onChange={handleEndTimeChange}
-            showTimeSelect
-            showTimeSelectOnly
-            timeCaption="Time"
-            dateFormat="h:mm aa"
-            minTime={endMinTime}
-            maxTime={endMaxTime}
+          <i className="fas fa-long-arrow-alt-right ml-4 mr-4" />
+
+          <BasicDropDown
+            value={endHourText}
+            containerClassName="GeneralAvailabilityDropDown"
+            list={availableEndHours}
+            onClickCallback={handleEndTimeChange}
           />
         </Col>
       </Row>
