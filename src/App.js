@@ -141,14 +141,7 @@ const App = ({
   )
 
   return (
-    <div
-      className="App RouteOverlay"
-      style={{
-        top: navBarHeight,
-        bottom: 0
-        // background: "red"
-      }}
-    >
+    <div className="App RouteOverlay">
       <Switch>
         {renderRouteItems}
         <Route component={PageNotFound} />
