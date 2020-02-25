@@ -1,7 +1,7 @@
 import React, { useMemo } from "react"
 import PropTypes from "prop-types"
 import { Container, Row, Col, ButtonGroup, Button } from "reactstrap"
-import { AddToHomeScreen, BasicCard, Footer } from "../../components"
+import { AddToHomeScreen, BasicCard, Header, Footer } from "../../components"
 import { RouteMap, RouterPush } from "../../routes"
 import { connect as reduxConnect } from "react-redux"
 import { useHistory } from "react-router-dom"
@@ -128,7 +128,7 @@ const Home = ({ userId }) => {
     <Container tag="article" className="Home Container">
       <Row className="Center">
         <Col xs={12} className="mt-3">
-          <h1 className="HeaderTitle">Reconnasite</h1>
+          <Header fontSize="3em">Reconnasite</Header>
         </Col>
         <Col xs={12}>
           <h4 className="SubHeaderTitle">

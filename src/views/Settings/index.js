@@ -26,6 +26,7 @@ const Settings = ({ history, location: { pathname } }) => {
 
   const tabs = [
     {
+      mountTabWhenActive: true,
       tabId: SETTINGS_AVAILABILITY,
       title: "Availability",
       className: "mt-2",
@@ -33,6 +34,7 @@ const Settings = ({ history, location: { pathname } }) => {
       onClickCallback: handleTabChange
     },
     {
+      mountTabWhenActive: true,
       tabId: SETTINGS_PREFERENCES,
       title: "Preferences",
       className: "mt-2",
@@ -40,6 +42,7 @@ const Settings = ({ history, location: { pathname } }) => {
       onClickCallback: handleTabChange
     },
     {
+      mountTabWhenActive: true,
       tabId: SETTINGS_PROFILE,
       title: "Profile",
       className: "mt-2",

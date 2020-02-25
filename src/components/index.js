@@ -16,6 +16,7 @@ import Divider from "./Divider"
 import FacebookGoogleLogin from "./FacebookGoogleLogin"
 import FileUpload from "./FileUpload"
 import Footer from "./Footer"
+import Header from "./Header"
 import Loading from "./Loading"
 import LoadingScreen from "./LoadingScreen"
 import NavBar from "./NavBar"
@@ -51,6 +52,7 @@ export {
   FacebookGoogleLogin,
   FileUpload,
   Footer,
+  Header,
   Loading,
   LoadingScreen,
   NavBar,

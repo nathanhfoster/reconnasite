@@ -14,6 +14,7 @@ const AccountDetails = ({ User }) => {
       <Row>
         <Col
           xs={12}
+          className="p-0"
           tag="h3"
           style={{ display: "flex", alignContent: "center" }}
         >
