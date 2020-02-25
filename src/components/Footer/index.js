@@ -1,6 +1,6 @@
 import React, { memo } from "react"
 import PropTypes from "prop-types"
-import { Container, Row, Col } from "reactstrap"
+import { Container, Row, Col, Jumbotron } from "reactstrap"
 import { Link } from "react-router-dom"
 import { RouteMap } from "../../routes"
 import "./styles.css"
