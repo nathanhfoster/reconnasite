@@ -1,6 +1,6 @@
 import React, { lazy, useMemo } from "react"
 import PropTypes from "prop-types"
-import { Container, Row, Col, ButtonGroup, Button } from "reactstrap"
+import { Container, Row, Col, Jumbotron, Button } from "reactstrap"
 import { BasicCard, Header } from "../../components"
 import { RouteMap, RouterPush } from "../../routes"
 import { connect as reduxConnect } from "react-redux"
@@ -120,7 +120,7 @@ const Home = ({ userId }) => {
   const renderFeatures = useMemo(
     () =>
       features.map((feature, i) => (
-        <Col key={i} md={4} sm={6} xs={12} className="p-2">
+        <Col key={i} xs={12} sm={6} md={4} className="pt-3 pt-sm-4">
           <BasicCard cardHeaderClassName="Center" {...feature} />
         </Col>
       )),
@@ -129,9 +129,11 @@ const Home = ({ userId }) => {
 
   return (
     <Container tag="article" className="Home Container">
-      <Row className="Center">
-        <Col xs={12} className="mt-3">
-          <Header fontSize="3em">Reconnasite</Header>
+      <Row className="Center mt-4" tag={Jumbotron}>
+        <Col xs={12}>
+          <Header fontSize="3em" color="var(--accentColor)">
+            Reconnasite
+          </Header>
         </Col>
         <Col xs={12}>
           <h4 className="SubHeaderTitle">
@@ -139,6 +141,7 @@ const Home = ({ userId }) => {
           </h4>
         </Col>
       </Row>
+
       <Row>{renderFeatures}</Row>
       <hr style={{ height: 40 }} />
       <Footer />
