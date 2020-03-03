@@ -22,15 +22,15 @@ Header.propTypes = {
     PropTypes.object
   ]),
   className: PropTypes.string.isRequired,
-  fill: PropTypes.bool.isRequired,
+  fill: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   color: PropTypes.string.isRequired,
   fontSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 }
 
 Header.defaultProps = {
   children: <h1>Header</h1>,
-  className: "Header p-2",
-  fill: "var(--primaryColor)",
+  className: "Header Center",
+  fill: false,
   color: "var(--secondaryColor)",
   fontSize: "3em"
 }

@@ -21,24 +21,24 @@ const ChangeUser = payload => ({ type: UserActionTypes.USER_SET, payload })
 const UserLogin = (payload, rememberMe) => async dispatch =>
   await Axios()
     .post("login/", qs.stringify(payload))
-    .then(res => {
-      const { id, token } = res.data
+    .then(({ data }) => {
+      const { id, token } = data
       dispatch(RefreshPatchUser(token, id))
       dispatch({
         type: UserActionTypes.USER_SET,
-        payload: res.data
+        payload: data
       })
       dispatch(saveReduxState())
       dispatch(GetUserEntries(1))
-      return res.data
+      return data
     })
     .catch(e => console.log("UserLogin: ", e.response))
 
 const RefreshPatchUser = (token, id) => (dispatch, getState) =>
   Axios()
     .get(`users/${id}/refresh/`)
-    .then(res => {
-      dispatch(SetUser(res.data))
+    .then(({ data }) => {
+      dispatch(SetUser(data))
     })
     .catch(e =>
       e.response && e.response.status == 401
@@ -61,12 +61,13 @@ const UpdateUser = payload => (dispatch, getState) => {
   const { id } = getState().User
   return Axios()
     .patch(`users/${id}/`, qs.stringify(payload))
-    .then(res => {
-      dispatch({ type: UserActionTypes.USER_SET, payload: res.data })
+    .then(({ data }) => {
+      dispatch({ type: UserActionTypes.USER_SET, payload: data })
       dispatch({
         type: AlertActionTypes.ALERTS_SET_MESSAGE,
         payload: { title: "Updated", message: "Profile" }
       })
+      return data
     })
     .catch(e => console.log("UpdateUser ERROR: ", e))
 }
@@ -76,11 +77,12 @@ const UpdateProfile = payload => (dispatch, getState) => {
   // await dispatch({ type: USER_UPDATE_LOADING })
   return AxiosForm(payload)
     .patch(`users/${id}/`, payload)
-    .then(res => {
+    .then(({ data }) => {
       dispatch({
         type: UserActionTypes.USER_SET,
-        payload: res.data
+        payload: data
       })
+      return data
     })
     .catch(e => console.log("UpdateProfile: ", e.response))
 }
@@ -146,12 +148,13 @@ const WatchUserLocation = watchId => dispatch => {
 const PasswordReset = payload => dispatch =>
   Axios()
     .post("rest-auth/password/reset/", qs.stringify(payload))
-    .then(res => {
-      const { detail } = res.data
+    .then(({ data }) => {
+      const { detail } = data
       dispatch({
         type: AlertActionTypes.ALERTS_SET_MESSAGE,
         payload: { title: "Password Reset", message: detail }
       })
+      return data
     })
     .catch(e => {
       console.log(JSON.parse(JSON.stringify(e)))
@@ -165,11 +168,12 @@ const GetUserSettings = () => (dispatch, getState) => {
   const { id } = getState().User
   return AxiosOffline()
     .get(`user/settings/${id}/view/`)
-    .then(res => {
+    .then(({ data }) => {
       dispatch({
         type: UserActionTypes.USER_SET_SETTINGS,
-        payload: res.data
+        payload: data
       })
+      return data
     })
     .catch(e => console.log(e))
 }
@@ -177,11 +181,12 @@ const GetUserSettings = () => (dispatch, getState) => {
 const PostSettings = payload => dispatch => {
   return AxiosOffline()
     .post(`user/settings/`, qs.stringify(payload))
-    .then(res => {
+    .then(({ data }) => {
       dispatch({
         type: UserActionTypes.USER_SET_SETTINGS,
-        payload: res.data
+        payload: data
       })
+      return data
     })
     .catch(e => console.log("PostSettings: ", e.response))
 }
@@ -190,15 +195,16 @@ const SetSettings = payload => (dispatch, getState) => {
 
   return AxiosOffline()
     .patch(`user/settings/${id}/`, qs.stringify(payload))
-    .then(res => {
+    .then(({ data }) => {
       dispatch({
         type: AlertActionTypes.ALERTS_SET_MESSAGE,
         payload: { title: "Updated", message: "Setting" }
       })
       dispatch({
         type: UserActionTypes.USER_SET_SETTINGS,
-        payload: res.data
+        payload: data
       })
+      return data
     })
     .catch(e => console.log("SetSettings: ", e.response))
 }

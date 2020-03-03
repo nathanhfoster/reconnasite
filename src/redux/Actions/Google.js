@@ -12,7 +12,7 @@ const GetAddress = (lat, lng, type = TYPES.LatLng) => {
     .get(
       `https://maps.googleapis.com/maps/api/geocode/json?${type}=${lat}, ${lng}&key=${REACT_APP_GOOGLE_LOCATION_API}`
     )
-    .then(res => {
+    .then(({ data }) => {
       const {
         0: {
           address_components,
@@ -22,7 +22,7 @@ const GetAddress = (lat, lng, type = TYPES.LatLng) => {
           plus_code,
           types
         }
-      } = res.data.results
+      } = data.results
 
       return formatted_address
     })

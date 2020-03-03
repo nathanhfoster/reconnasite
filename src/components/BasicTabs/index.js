@@ -53,7 +53,9 @@ const BasicTabs = ({
         return (
           <NavItem key={tabId}>
             <NavLink
-              className={`BasicTabsNavLink ${onTab ? "active" : ""}`}
+              className={`BasicTabsNavLink px-2 py-1 p-sm-3 py-sm-2 ${
+                onTab ? "active" : ""
+              }`}
               onClick={() =>
                 onClickCallback
                   ? onClickCallback(tabId)

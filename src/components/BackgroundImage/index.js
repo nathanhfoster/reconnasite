@@ -1,6 +1,6 @@
-import React, { Fragment, useMemo, memo } from "react"
+import React, { Fragment, memo } from "react"
 import PropTypes from "prop-types"
-import { Media } from "reactstrap"
+import { ViewPortContainer } from ".."
 import { useLocation } from "react-router-dom"
 import { RouteMap } from "../../routes"
 import "./styles.css"
@@ -20,7 +20,9 @@ const BackgroundImage = () => {
 
   return (
     <Fragment>
-      <div className="BackgroundImage">{/* <Media src={bgImage} /> */}</div>
+      <ViewPortContainer className="BackgroundImage">
+        {/* <Media src={bgImage} /> */}
+      </ViewPortContainer>
       {background}
     </Fragment>
   )
