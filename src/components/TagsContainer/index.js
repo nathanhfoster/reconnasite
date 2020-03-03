@@ -17,7 +17,7 @@ const TagsContainer = ({
   onClickCallback,
   hoverable,
   showTagIcon,
-  tagContainerClassName
+  tagclassName
 }) => {
   if (flexWrap === "wrap") {
     overflowX = "auto"
@@ -39,7 +39,7 @@ const TagsContainer = ({
     tags.map(({ title }, i) => (
       <Badge
         key={title}
-        className={`TagContainer ${tagContainerClassName} ${
+        className={`TagContainer ${tagclassName} ${
           hoverable ? "TagContainerHover" : ""
         }`}
         onClick={onClickCallback ? () => onClickCallback(title) : null}
@@ -84,7 +84,7 @@ TagsContainer.propTypes = {
   minimalView: PropTypes.bool,
   hoverable: PropTypes.bool,
   showTagIcon: PropTypes.bool,
-  tagContainerClassName: PropTypes.string
+  tagclassName: PropTypes.string
 }
 
 TagsContainer.defaultProps = {
@@ -97,6 +97,6 @@ TagsContainer.defaultProps = {
   minimalView: false,
   hoverable: false,
   showTagIcon: true,
-  tagContainerClassName: ""
+  tagclassName: ""
 }
 export default memo(TagsContainer)

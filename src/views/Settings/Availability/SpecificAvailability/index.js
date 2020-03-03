@@ -125,7 +125,7 @@ const GeneralAvailability = ({
         <Col xs={12} className="form-inline Center">
           <BasicDropDown
             value={startHourText}
-            containerClassName="GeneralAvailabilityDropDown"
+            className="GeneralAvailabilityDropDown"
             list={AVAILABLE_HOURS}
             onClickCallback={handleStartTimeChange}
           />
@@ -134,7 +134,7 @@ const GeneralAvailability = ({
 
           <BasicDropDown
             value={endHourText}
-            containerClassName="GeneralAvailabilityDropDown"
+            className="GeneralAvailabilityDropDown"
             list={availableEndHours}
             onClickCallback={handleEndTimeChange}
           />
